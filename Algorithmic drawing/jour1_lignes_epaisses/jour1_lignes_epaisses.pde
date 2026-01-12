@@ -29,9 +29,9 @@ void draw(){
     int green = (int) random(0, 255);
     color c = color(red, blue, green); // on créer une couleur
     stroke(c); // on dit qu'on va utiliser la couleur c lorsque l'on va tracer nos lignes
-    strokeWeight(D);
-    line (N, N, N, Y);
-    line (N, Y, X, Y);
+    strokeWeight(D); // épaisseur du trait
+    line (N, N, N, Y); // un trait
+    line (N, Y, X, Y); // un autre trait...
     line (X, Y, X, N);
     line (X, N, N, N);
     delay(100); // on attend 100ms

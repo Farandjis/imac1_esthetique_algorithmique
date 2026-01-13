@@ -1,10 +1,12 @@
-int X = 640; // taille x fenêtre
-int Y = 640; // taille y fenêtre
-int longueur = 25;
+int X = 800; // taille x fenêtre
+int Y = 800; // taille y fenêtre
+int longueur = 10;
 // On déclare ces variables en dehors pour qu'elles survivent entre deux "draw"
 float antX;
 float antY;
-float antAngle = PI; // Votre rotation initiale
+float antAngle = PI; // La fourmi est orienté vers la gauche ←
+
+
 void settings() {
   // J'ai utilisé Gemini pour cette fonction settings, car j'essayais d'utiliser size(X, Y) dans setup, et ça ne marchait pas.
   // son explication : Processing construit la fenêtre avant de lire tes variables, donc size() dans le setup() n'accepte que des nombres fixes, pas de variables.
@@ -23,13 +25,14 @@ void setup(){
 
 
 void draw(){
-  regle();
-  delay(100);
+  regle(); // que fais ton ? La règle à exécuter
+  delay(0); // latence
 
 
 }
 
 
+// algo de la fourmi de Lanton
 void regle(){
   boolean estUneCaseBlancheVariable = estUneCaseBlanche();
   if (estUneCaseBlancheVariable){
@@ -47,16 +50,18 @@ void regle(){
 /**
 Tourne de 90° vers la gauche
 Donc si la fourmi pointe vers le haut, le prochain carré sera dessiné pile à la gauche du carré précédemment dessiné
+code généré par Gemini car j'étais bloqué à cause des limitations de Processing
 */
 void tournerAGauche(){
-  antAngle -= HALF_PI;
-  antX += cos(antAngle) * longueur;
-  antY += sin(antAngle) * longueur;
+  antAngle -= HALF_PI; // on tourne
+  antX += cos(antAngle) * longueur; // on se déplace en X
+  antY += sin(antAngle) * longueur; // on se déplace en Y
 }
 
 /**
 Tourne de 90° vers la droite
 Donc si la fourmi pointe vers le haut, le prochain carré sera dessiné pile à la droite du carré précédemment dessiné
+code généré par Gemini car j'étais bloqué à cause des limitations de Processing
 */
 void tournerADroite(){
   antAngle += HALF_PI; // on tourne
@@ -71,7 +76,7 @@ Entrée :
 */
 void dessinerUnCarre(int couleur){
   fill(couleur);
-  square(0, 0, longueur);
+  square(antX, antY, longueur);
 }
 
 /**
@@ -85,9 +90,7 @@ Processing possède deux fonctions conçues exactement pour ça. Elles convertis
 C'est la méthode la plus robuste car elle fonctionne même si vous faites plusieurs translate à la suite ou même des rotate.
 */
 boolean estUneCaseBlanche(){
-  int realX = int(screenX(1, 1));
-  int realY = int(screenY(1, 1));
-  int couleur = get(realX,realY);
+  int couleur = get((int) antX+5,(int) antY+5);
   
   return couleur == 255 || couleur == -1;
 }

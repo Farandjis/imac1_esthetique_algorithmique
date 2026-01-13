@@ -4,7 +4,7 @@ int longueur = 25;
 // On déclare ces variables en dehors pour qu'elles survivent entre deux "draw"
 float antX;
 float antY;
-float antAngle = PI; // Votre rotation initiale
+float antAngle = 0; // Votre rotation initiale
 void settings() {
   // J'ai utilisé Gemini pour cette fonction settings, car j'essayais d'utiliser size(X, Y) dans setup, et ça ne marchait pas.
   // son explication : Processing construit la fenêtre avant de lire tes variables, donc size() dans le setup() n'accepte que des nombres fixes, pas de variables.
@@ -18,16 +18,24 @@ void setup(){
     // On initialise la fourmi au centre
     antX = width / 2;
     antY = height / 2;
+    
+    regle();
+    regle();
+    regle();
+    regle();
+    regle();
+    regle();
 }
 
 
-
+/*
 void draw(){
   regle();
   delay(100);
 
 
 }
+*/
 
 
 void regle(){
@@ -71,7 +79,7 @@ Entrée :
 */
 void dessinerUnCarre(int couleur){
   fill(couleur);
-  square(0, 0, longueur);
+  square(antX, antY, longueur);
 }
 
 /**
@@ -85,9 +93,7 @@ Processing possède deux fonctions conçues exactement pour ça. Elles convertis
 C'est la méthode la plus robuste car elle fonctionne même si vous faites plusieurs translate à la suite ou même des rotate.
 */
 boolean estUneCaseBlanche(){
-  int realX = int(screenX(1, 1));
-  int realY = int(screenY(1, 1));
-  int couleur = get(realX,realY);
+  int couleur = get((int) antX,(int) antY);
   
   return couleur == 255 || couleur == -1;
 }

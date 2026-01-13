@@ -1,10 +1,10 @@
-int X = 640; // taille x fenêtre
-int Y = 640; // taille y fenêtre
-int longueur = 25;
+int X = 800; // taille x fenêtre
+int Y = 800; // taille y fenêtre
+int longueur = 10;
 // On déclare ces variables en dehors pour qu'elles survivent entre deux "draw"
 float antX;
 float antY;
-float antAngle = 0; // Votre rotation initiale
+float antAngle = PI; // La fourmi est orienté vers la gauche ←
 void settings() {
   // J'ai utilisé Gemini pour cette fonction settings, car j'essayais d'utiliser size(X, Y) dans setup, et ça ne marchait pas.
   // son explication : Processing construit la fenêtre avant de lire tes variables, donc size() dans le setup() n'accepte que des nombres fixes, pas de variables.
@@ -18,24 +18,21 @@ void setup(){
     // On initialise la fourmi au centre
     antX = width / 2;
     antY = height / 2;
-    
-    regle();
-    regle();
-    regle();
-    regle();
-    regle();
-    regle();
+   
+
+
+
 }
 
 
-/*
+
 void draw(){
   regle();
-  delay(100);
+  delay(0);
 
 
 }
-*/
+
 
 
 void regle(){
@@ -93,7 +90,7 @@ Processing possède deux fonctions conçues exactement pour ça. Elles convertis
 C'est la méthode la plus robuste car elle fonctionne même si vous faites plusieurs translate à la suite ou même des rotate.
 */
 boolean estUneCaseBlanche(){
-  int couleur = get((int) antX,(int) antY);
+  int couleur = get((int) antX+5,(int) antY+5);
   
   return couleur == 255 || couleur == -1;
 }

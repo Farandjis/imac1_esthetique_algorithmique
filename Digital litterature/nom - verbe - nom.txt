@@ -13,7 +13,26 @@ on va utiliser deux listes :
 - l'une contient les mots de la phrases
 - l'autre contient le type de mot de la phrase
 
-Si on veut rajouter un nom à la phrase, on regarde d'abord si :
+
+Si on veut rajouter un ADJECTIF à la phrase, on regarde d'abord si :
+	- si c'est le premier mot
+	- s'il est précédé par un verbe
+
+
+Si on veut rajouter un NOM à la phrase, on regarde d'abord si :
 	- si c'est le premier mot
 	- s'il est précédé par un adjectif
 	- s'il est précédé par un verbe
+
+
+Si on veut rajouter un ADVERBE à la phrase, on regarde d'abord si :
+	- s'il est précédé d'un nom
+
+Si on veut rajouter un VERBE à la phrase, on regarde d'abord si :
+	- s'il est précédé d'un nom
+	- s'il est précédé d'un adverbe
+
+
+Après avoir rajouté un NOM :
+	- si ce NOM n'est pas d'id 0 ou 1 dans la liste, c'est donc le dernier mot de la phrase
+		--> on a terminé la phrase, on passe à la suivante.

@@ -35,19 +35,23 @@ void draw(){
 // algo de la fourmi de Lanton
 void regle(){
   if (estUneCaseBlanche()){
-        dessinerUnCarre("rouge");
+    dessinerUnCarre("rouge");
+    strachey("rouge");
     tournerADroite();
   }
   else if(estUneCaseNoir()) {;
-      dessinerUnCarre("blanc");
+    dessinerUnCarre("blanc");
+    strachey("blanc");
     tournerAGauche();
   }
   else if (estUneCaseRouge()){
     dessinerUnCarre("bleu");
+    strachey("bleu");
     reculer();
   }
   else {
-        dessinerUnCarre("noir");
+    dessinerUnCarre("noir");
+    strachey("noir");
     avancer();
   }
 }

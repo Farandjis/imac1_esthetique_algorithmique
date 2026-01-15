@@ -1,0 +1,19 @@
+nom -> verbe -> nom
+
+(adj) -> nom -> (adv) -> verbe -> (adj) -> nom
+
+adj = Rouge ?
+nom = bleu
+adv = noir ?
+verbe = blanc
+
+
+
+on va utiliser deux listes :
+- l'une contient les mots de la phrases
+- l'autre contient le type de mot de la phrase
+
+Si on veut rajouter un nom à la phrase, on regarde d'abord si :
+	- si c'est le premier mot
+	- s'il est précédé par un adjectif
+	- s'il est précédé par un verbe

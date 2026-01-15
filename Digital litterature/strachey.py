@@ -22,121 +22,93 @@ from random import choice
 import textwrap
 from time import sleep
 
-first = ['Darling', 'Dear', 'Honey', 'Jewel']
-second = ['duck', 'love', 'moppet', 'sweetheart']
+first = ['Bonjour,', 'Bonsoir,']
+second = ['']
 adjectives = [
-    'adorable',
-    'affectionate',
-    'amorous',
-    'anxious',
-    'ardent',
-    'avid',
-    'breathless',
-    'burning',
-    'covetous',
-    'craving',
-    'curious',
-    'darling',
-    'dear',
-    'devoted',
-    'eager',
-    'erotic',
-    'fervent',
-    'fond',
-    'impatient',
-    'keen',
-    'little',
-    'loveable',
-    'lovesick',
-    'loving',
-    'passionate',
-    'precious',
-    'sweet',
-    'sympathetic',
-    'tender',
-    'unsatisfied',
-    'wistful',
+    ['motivé', 'motivée'],
+    ['passionné', 'passionnée'],
+    ['cruel', 'cruelle'],
+    ['sérieux', 'sérieuse'],
+    ['pervers', 'pervers'],
+    ['adaptable', 'adaptable'],
+    ['confiant', 'confiante'],
+    ['enthousiaste', 'enthousiaste'],
+    ['pédagogue', 'pédagogue'],
+    ['sociable', 'sociable'],
+    ['haineux', 'haineuse'],
+    ['disponible', 'disponible'],
+    ['intéressé', 'intéressée'],
+    ['impliqué', 'impliquée'],
+    ['professionnel', 'professionnelle'],
+    ['compétent', 'compétente'],
+    ['expérimenté', 'expérimentée'],
+    ['coquin', 'coquine'],
+    ['technique', 'technique'],
+    ['académique', 'académique'],
+    ['affreux', 'affreuse'],
+    ['raté', 'ratée'],
+    ['pertinent', 'pertinente'],
+    ['féroce', 'féroce'],
+    ['concret', 'concrète'],
+    ['généré par ChatGPT', 'généré par ChatGPT'],
+
 ]
-nouns = [
-    'adoration',
-    'affection',
-    'ambition',
-    'appetite',
-    'ardour',
-    'charm',
-    'desire',
-    'devotion',
-    'eagerness',
-    'enchantment',
-    'enthusiasm',
-    'fancy',
-    'fellow feeling',
-    'fervour',
-    'fondness',
-    'heart',
-    'hunger',
-    'infatuation',
-    'liking',
-    'longing',
-    'love',
-    'lust',
-    'passion',
-    'rapture',
-    'sympathy',
-    'tenderness',
-    'thirst',
-    'wish',
-    'yearning',
-]
+
 adverbs = [
-    'affectionately',
-    'anxiously',
-    'ardently',
-    'avidly',
-    'beautifully',
-    'breathlessly',
-    'burningly',
-    'covetously',
-    'curiously',
-    'devotedly',
-    'eagerly',
-    'fervently',
-    'fondly',
-    'impatiently',
-    'keenly',
-    'lovingly',
-    'passionately',
-    'seductively',
-    'tenderly',
-    'winningly',
-    'wistfully',
+    'actuellement',
+    'récemment',
+    'déjà',
+    'toujours',
+    'bientôt',
+    'rapidement',
+    'quotidiennement',
+    'pleinement',
+    'particulièrement',
+    'vivement',
+    'fortement',
+    'sincèrement',
+    'cordialement',
+    'naturellement',
+    'activement',
+    'concrètement',
+    'jamais',
+    'directement',
+    'davantage',
+    'efficacement',
+    'professionnellement',
+    'rigoureusement',
+    'précisément',
+    'également',
+    'notamment',
+    'ainsi',
+    'clairement'
 ]
+
+nouns = [
+    ['candidature', 1], ['lettre', 1], ['motivation', 1], ['cv', 0],
+    ['objet', 0], ['offre', 1], ['poste', 0], ['emploi', 0],
+    ['job', 0], ['stage', 0], ['contrat', 0], ['violence', 1],
+    ['harcèlement', 0], ['coordonnée', 1], ['téléphone', 0], ['mail', 0],
+    ['adresse', 0], ['signature', 1], ['nul', 0], ['expression', 0],
+    ['attention', 0], ['disposition', 1], ['entreprise', 0], ['société', 1],
+    ['secteur', 0], ['domaine', 0], ['moche', 0], ['équipe', 0],
+    ['service', 0], ['direction', 1], ['recruteur', 0], ['tuteur', 0],
+    ['collaboration', 1], ['vie', 1], ['compétence', 1], ['expertise', 0],
+    ['tâche', 1], ['objectif', 0], ['résultat', 0], ['succès', 0],
+    ['défi', 0], ['challenge', 0], ['nullité', 1], ['valeur', 1],
+    ['impact', 0], ['conception', 1], ['design', 0], ['art', 0],
+    ['chiantisme', 0], ['intérêt', 0], ['passion', 1], ['curiosité', 1],
+    ['dynamisme', 0], ['professionnalisme', 0]
+]
+
 verbs = [
-    'adores',
-    'attracts',
-    'cares for',
-    'cherishes',
-    'clings to',
-    'desires',
-    'holds dear',
-    'hopes for',
-    'hungers for',
-    'is wedded to',
-    'likes',
-    'longs for',
-    'loves',
-    'lusts after',
-    'pants for',
-    'pines for',
-    'prizes',
-    'sighs for',
-    'tempts',
-    'thirsts for',
-    'treasures',
-    'wants',
-    'wishes',
-    'woos',
-    'yearns for',
+    'adresser', 'contacter', 'rencontrer', 'hair', 'échanger',
+    'exprimer', 'expliquer', 'remercier', 'prier', 'agréer',
+    'solliciter', 'proposer', 'assurer', 'confirmer', 'travailler',
+    'effectuer', 'réaliser', 'mener', 'gérer', 'organiser',
+    'mettre en place', 'appliquer', 'détester', 'utiliser', 'maîtriser',
+    'souhaiter', 'vouloir', 'désirer', 'espérer', 'aimer',
+    'admirer', 'intéresser', 'motiver', 'crever', 'convaincre'
 ]
 
 def maybe(words):
@@ -146,44 +118,54 @@ def maybe(words):
 
 def longer():
     return (
-        ' My'
+        ' Mon'
         + maybe(adjectives)
         + ' '
         + choice(nouns)
         + maybe(adverbs)
         + ' '
         + choice(verbs)
-        + ' your'
+        + ' ton'
         + maybe(adjectives)
         + ' '
         + choice(nouns)
-        + '.'
+        + '. '
     )
 
 def shorter():
-    return ' ' + choice(adjectives) + ' ' + choice(nouns) + '.'
+    nom_list = choice(nouns)
+    adj_mot = choice(adjectives)[nom_list[1]] # on sélectionne l'adjectif au masculin/féminin en fonction du nom
+    return [' ' + nom_list[0] + ' ' + adj_mot + '. ', nom_list[1]]
 
 def body():
     text = ''
     you_are = False
     for i in range(0, 5):
-        type = choice(['longer', 'shorter'])
+        type = choice(['shorter'])
         if type == 'longer':
             text = text + longer()
             you_are = False
         else:
             if you_are:
-                text = text[:-1] + ': my' + shorter()
+                s = shorter()
+                if s[1] == 0: # si le nom commun est masculin
+                    text = text[:-1] + ': mon' + s[0] # on utilise mon
+                else :
+                    text = text[:-1] + ': ma' + s[0] # sinon ma
                 you_are = False
             else:
-                text = text + ' You are my' + shorter()
+                s = shorter()
+                if s[1] == 0:
+                    text = text + 'Votre offre est mon' + s[0]
+                else :
+                    text = text + 'Vous êtes ma' + s[0]
                 you_are = True
     return text
 
 def letter():
     text = choice(first) + ' ' + choice(second) + '\n\n' + \
            textwrap.fill(body(), 80) + '\n\n' + \
-           '                            Yours ' + choice(adverbs) + '\n\n' + \
+           '                            Votre candidat ' + choice(adjectives)[0] + '\n\n' + \
            '                                  M.U.C.' + '\n'
     return text.upper() if (len(argv) > 1 and argv[1] == '-c') else text
 

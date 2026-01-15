@@ -36,3 +36,28 @@ Si on veut rajouter un VERBE à la phrase, on regarde d'abord si :
 Après avoir rajouté un NOM :
 	- si ce NOM n'est pas d'id 0 ou 1 dans la liste, c'est donc le dernier mot de la phrase
 		--> on a terminé la phrase, on passe à la suivante.
+
+
+
+
+
+
+--------------------
+16/01/2026 00:01 : problème
+
+L'algo python ne marchait pas vraiment en réalité, la partie phrase longue était désactivé hors là sur Processing je faisais celle là.
+Donc forcément, sur la formation des phrases, ça coince.
+
+Plutôt que de passer par un ArrayList, on va faire plus simple et passer par un tableau. Chaque type de mot à sa propre case qui peut rester vide dans certains cas.
+
+L'ordre des types est déterminés dans le fichier mon secteur rapidement txt là (NPM ADJ V NOM ADV ADJ).
+
+SOIT on conserve l'idée originale : on ajoute les mots dans l'ordre de la phrase, soit on estime qu'on peut ajouter dans le désordre. Dans un tel cas, il faudra savoir quand on aura terminé la phrase.
+Peut être plutôt partir sur l'idée originale, donc on doit revoir les conditions de quand on prend en compte ou non un type de mot.
+Si on prend le mot, on le place sur la case adéquate.
+A la fin, on assemble dans une vrai et belle phrase ces mots.
+Et pafff, cela fait une phrase longue.
+
+Ensuite, on pourra estimer en fonction de la couleur si on fait une phrase courte ou longue. En fonction, on va choisir une stratégie de récolte puis de mise au propre de la phrase différente.
+
+Après, il faudra juste terminer la forme du poème (rajouter le bonjour... blablabla... Cordialement ou jsp). et puis paff, ça sera bon.

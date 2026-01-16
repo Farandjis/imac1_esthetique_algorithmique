@@ -1,6 +1,6 @@
 class FenetreVide extends PApplet {
-  PImage imgSalameche;
-  PImage imgPikachu;
+  PImage imgJoueur;
+  PImage imgFourmi;
   PApplet parent; 
 
   // Variable pour le mouvement
@@ -18,8 +18,8 @@ class FenetreVide extends PApplet {
   void setup() {
     surface.setTitle("Statut du Combat");
     // Chargement via le sketch principal pour trouver le dossier data
-    imgSalameche = parent.loadImage("devant/salameche.png");
-    imgPikachu = parent.loadImage("devant/pikachu.png");
+    imgJoueur = parent.loadImage("derriere/salameche.png");
+    imgFourmi = parent.loadImage("devant/pikachu.png");
   }
 
   void draw() {
@@ -29,10 +29,13 @@ class FenetreVide extends PApplet {
     stroke(200);
     line(0, height/2 + 50, width, height/2 + 50); 
 
+    // On affiche Salamèche à la position variable salamecheX
+    image(imgJoueur, salamecheX, height - 130, 120, 120);
+    /*
     // --- MOUVEMENT DE SALAMÈCHE ---
-    if (imgSalameche != null) {
+    if (imgJoueur != null) {
       // On affiche Salamèche à la position variable salamecheX
-      image(imgSalameche, salamecheX, height - 130, 120, 120);
+      image(imgJoueur, salamecheX, height - 130, 120, 120);
       
       // On augmente X pour le déplacer vers la droite
       salamecheX = salamecheX + 2; 
@@ -42,11 +45,11 @@ class FenetreVide extends PApplet {
         salamecheX = -120; 
       }
     }
+    */
 
     // Pikachu reste fixe en haut à droite
-    if (imgPikachu != null) {
-      image(imgPikachu, width - 150, 30, 120, 120);
-    }
+    image(imgFourmi, width - 150, 30, 120, 120);
+    
     
     fill(0);
     text("Salamèche avance !", 20, 30);

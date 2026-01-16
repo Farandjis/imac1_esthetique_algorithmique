@@ -26,7 +26,7 @@ void setup(){
 
 void draw(){
   regle(); // que fais ton ? La règle à exécuter
-  delay(500); // latence
+  delay(100); // latence
 
 
 }

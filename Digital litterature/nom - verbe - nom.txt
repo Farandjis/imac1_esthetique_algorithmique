@@ -1,6 +1,6 @@
 nom -> verbe -> nom
 
-(adj) -> nom -> (adv) -> verbe -> (adj) -> nom
+nom -> (adj) -> verbe -> nom -> (adv) -> (adj)
 
 adj = Rouge ?
 nom = bleu
@@ -15,26 +15,23 @@ on va utiliser deux listes :
 
 
 Si on veut rajouter un ADJECTIF à la phrase, on regarde d'abord si :
-	- si c'est le premier mot
-	- s'il est précédé par un verbe
-
+	- si c'est précédé par un nom
+	- si c'est précédé par un adverbe
 
 Si on veut rajouter un NOM à la phrase, on regarde d'abord si :
 	- si c'est le premier mot
-	- s'il est précédé par un adjectif
-	- s'il est précédé par un verbe
+	- si c'est précédé par un verbe
 
 
 Si on veut rajouter un ADVERBE à la phrase, on regarde d'abord si :
-	- s'il est précédé d'un nom
+	- si c'est précédé par le deuxième nom
 
 Si on veut rajouter un VERBE à la phrase, on regarde d'abord si :
-	- s'il est précédé d'un nom
-	- s'il est précédé d'un adverbe
+	- si c'est précédé par le premier adjectif
 
 
-Après avoir rajouté un NOM :
-	- si ce NOM n'est pas d'id 0 ou 1 dans la liste, c'est donc le dernier mot de la phrase
+Au moment d'ajouter un nom:
+	- si la phrase contient déjà les deux noms
 		--> on a terminé la phrase, on passe à la suivante.
 
 

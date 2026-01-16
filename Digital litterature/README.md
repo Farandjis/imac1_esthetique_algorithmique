@@ -16,8 +16,8 @@ Digital littérature
 
 **Arborescence**\
 Digital littérature\
-│   ├── jour4_fourmiLangton_litteraire : mon projet personnel (langton litteraire)
-│   ├── strachey.py: mon adaptation de l'algo du poème (atelier 4.1)
+│   ├── jour4_fourmiLangton_litteraire : mon projet personnel (langton litteraire)\
+│   ├── strachey.py: mon adaptation de l'algo du poème (atelier 4.1)\
 │   ├── screenshots : les images
 
 <br><br>

@@ -4,6 +4,7 @@ int Y = 300;
 int longueur = 10;
 float antX, antY;
 float antAngle = PI; 
+String couleurDeLaCaseOuLaFourmiVientDArriver = "blanc";
 
 void settings() {
   size(X, Y);
@@ -29,15 +30,19 @@ void draw() {
 // --- LOGIQUE DE LA FOURMI ---
 void regle() {
   if (estUneCaseBlanche()) {
+    couleurDeLaCaseOuLaFourmiVientDArriver = "blanc";
     dessinerUnCarre("rouge");
     tournerADroite();
   } else if (estUneCaseNoir()) {
+    couleurDeLaCaseOuLaFourmiVientDArriver = "noir";
     dessinerUnCarre("blanc");
     tournerAGauche();
   } else if (estUneCaseRouge()) {
+    couleurDeLaCaseOuLaFourmiVientDArriver = "rouge";
     dessinerUnCarre("bleu");
     reculer();
   } else {
+    couleurDeLaCaseOuLaFourmiVientDArriver = "bleu";
     dessinerUnCarre("noir");
     avancer();
   }

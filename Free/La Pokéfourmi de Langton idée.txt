@@ -1,0 +1,9 @@
+La Pokéfourmi de Langton
+
+La fourmi sélectionne un pokémon parmi 4 comme le joueur
+
+le joueur attaque parmi les 4 attaques disponible
+la fourmi attaque parmi les 4 attaques disponible 
+
+
+genre rouge = 1... bleu = 2... c'est comme ça qu'elle prend ses décisions

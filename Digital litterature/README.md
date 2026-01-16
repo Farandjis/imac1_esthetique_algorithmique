@@ -163,3 +163,10 @@ Exemples de phrases générées par la fourmi de Langton avec l'algorithme (au l
 - Mon  attention affreux met en place  ton  attention pleinement
 - Ma  candidature adresse  ton  défi quotidiennement
 - Mon  moche cruel exprime  ton  défi
+
+\
+\
+\
+\
+Remarque : ce rapport a été relu par ChatGPT afin de corriger les dernières fautes d’orthographe restantes. J’ai précisé de conserver la structure de ce que j’avais écrit ; il a uniquement corrigé les fautes et j’ai vérifié ses corrections.\
+J'ai bien veillé à ce que ChatGPT ne corrige pas les phrases générées par l'algorithme.

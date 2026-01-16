@@ -127,6 +127,7 @@ Il y en a quelques une :
   Si on en trouve un troisième, on le remet (car on en a plus). J'estimais que c'était un moyen de reproduire l'aspect aléatoire de la présence d'un adjectif/adverbe.\
   J'ai l'impression que seul l'adjectif a été implémenté mais je ne suis pas sûr que ce soit fonctionnel.
 
+
 ### 4. Images
 <div align="center">
 <img width="500" src="screenshots/jour4_bug.png" title="bug"/>
@@ -145,3 +146,17 @@ Il y en a quelques une :
 *Lors de la phase de développement : affichage de la liste de 6 caractères où on remarque que l'on a déjà un nom, un adjectif et un verbe.*
 
 </div>
+
+<br><br><br>
+
+Exemples de phrase générées par la fourmi de Langton avec l'algo (au lancement du programme):
+- Mon  poste souhaite  ton  défi
+- Mon  attention adresse  ton  poste
+- Mon  attention motivé adresse  ton  attention pédagogue
+- Mon  moche haineux sollicite  ton  offre
+- Mon  harcèlement impliqué sollicite  ta  compétence confiante
+- Ma  compétence admire  ta  candidature
+- Mon  défi cruel mett en place  ton  art intéressé
+- Mon  attention affreux met en place  ton  attention pleinement
+- Ma  candidature adresse  ton  défi quotidiennement
+- Mon  moche cruel exprime  ton  défi

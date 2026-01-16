@@ -4,7 +4,7 @@ E3 IMAC
 <div align="center">
 <img height="95" src="../esiee.jpg" title="logo esiee paris"/>
 
-# Jour 1 - Workshop Esthétiques algorithmiques
+# Jour 4 - Workshop Esthétiques algorithmiques
 
 ---
 
@@ -27,7 +27,7 @@ Digital litterature\
 ## Plan
 
 - ## [I – Atelier 4.1 : l'algorithme de Strachey](#p1)
-- ## [II – Atelier 4.2](#p2)
+- ## [II – Atelier 4.2 : la fourmi de Langton littéraire](#p2)
 
 ---
 
@@ -75,13 +75,73 @@ mon secteur passionné. Votre offre est mon mail passionné.\
 \
                                   M.U.C.
 
-<div align="center">
-<img width="500" src="screenshots/lignes_epaisses.png" title="résultat"/>
 
-*Figure "lignes épaisses" colorée, résultat de l'Atelier 1.1*
-
-</div>
 
 <br><br><br><br><br>
 
 ---
+## <a id="p1"></a> II - Atelier 4.2 : la fourmi de Langton littéraire
+
+### 1. Algorithme très résumé
+
+Et si nous remplaçons les appels à la librairie random par la fourmi de Langton ?\
+C'est l'idée que j'ai eu, j'ai repris mon rendu du Jour 2, voici l'attribution des couleurs :
+- Adjectif (optionnel) : rouge
+- Nom : bleu
+- Adverbe (optionnel) : noir
+- Verbe : blanc
+
+Sachant qu'une phrase est composé de cette manière : nom1 -> (adj1) -> verbe -> nom2 -> (adv) -> (adj2)
+
+Le mot est sélectionné en calculant le modulo de l'addition des positions X et Y avec la taille de la liste dont on veut récupérer le mot :
+`int(antX+antY)%liste.size()`.\
+A partir de là, on récupère l'indice, que j'appel ID, du mot que l'on va récupérer dans la liste. 
+
+\
+Ma phrase est un tableau de 6 cases où j'ajoute à chaque passage, sous condition, le mot associé à la couleur.
+
+Par exemple, voici les conditions pour accepter l'ajout d'un nom :
+- C'est le premier mot de la phrase : nom1
+- Sinon, s'il y a un verbe dans la phrase, c'est nom2
+
+Le nom à une particularité :
+- si nom1 et nom2 sont déjà pris, on estime que la phrase est terminé et donc que ce nom est pour la nouvelle phrase.
+
+\
+De cette manière, nous avons au strict minimum une phrase simple : nom + verbe + nom ou longue avec noms, adjectifs, adverbe et verbe.
+
+
+### 2. Difficultés rencontrés
+Je rend ce travail en retard, en effet, non seulement la traduction Anglais->Français de l'algo en Python a été plus dur, mais j'ai oublié de m'occuper des phrases longues.\
+J'ai commencé mon projet personnel avec les phrases longues non corrigé, j'ai donc dû tout reprendre.\
+\
+J'ai aussi eu une difficulté avec le choix de la structure de données : tableau, ArrayList... Puisqu'en fonction de la structure, je ne peux pas utiliser certaines fonctions pourtant bien pratique.
+
+### 3. Amélioration possible
+Il y en a quelques une :
+- Former le poème : j'avais commencé puis abandonner de le faire, il n'y a que les phrases longues
+- Corriger le bug du plantage : le programme plante au bout d'un moment 
+- Implémenter les phrases courtes du poème (les phrases "shorter")
+- Terminer l'implémentation qu'un adjectif ou adverbe peut finalement ne pas être dans la phrase :
+  - mon idée était que lorsqu'on retrouve un nouvel adjectif/adverbe alors que nous avons déjà un à l'emplacement attendu, on le retire.\
+  Si on en trouve un troisième, on le remet (car on en a plus). J'estimais que c'était un moyen de reproduire l'aspect aléatoire de la présence d'un adjectif/adverbe.\
+  J'ai l'impression que seul l'adjectif a été implémenté mais je ne suis pas sûr que ce soit fonctionnel.
+
+### 4. Images
+<div align="center">
+<img width="500" src="screenshots/jour4_bug.png" title="bug"/>
+
+*Bug du plantage avec l'erreur : IndexOutOfBoundsException: Index -20 out of bounds for length 27*
+<br>
+*On remarque les dernières phrases générées par l'algorithme dans la console.*
+
+</div>
+
+<br><br><br>
+
+<div align="center">
+<img width="500" src="screenshots/jour4_encoursdexecution.png" title="execution"/>
+
+*Lors de la phase de développement : affichage de la liste de 6 caractères où on remarque que l'on a déjà un nom, un adjectif et un verbe.*
+
+</div>
